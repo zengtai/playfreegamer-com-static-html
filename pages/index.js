@@ -1,9 +1,13 @@
 import Image from "@/components/Image";
 import Head from "next/head";
 import Stars from "@/components/Stars";
+import { getDataForHome } from "@/lib/api";
+import getIconUrl from "@/utils/getIconUrl";
+import getFormatedNum from "@/utils/getFormatedNum";
 
 export default function Home({ data }) {
-  const games = new Array(20).fill(1);
+  console.log(`data: `, data);
+  const games = data.games;
   const star = () => (
     <svg
       width="20"
@@ -31,24 +35,24 @@ export default function Home({ data }) {
       <div className="container">
         <ul className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 xl:gap-8 gap-4 xl:mt-8 xl:mx-8 xl:mb-12 m-4">
           {games.map((i) => (
-            <li key={i}>
+            <li key={i.slug}>
               <a href="#">
                 <Image
-                  src="https://image-component.nextjs.gallery/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmountains.a2eb1d50.jpg&w=1920&q=75"
-                  alt=""
+                  src={getIconUrl(i.appid)}
+                  alt={i.title}
                   width={`100`}
                   height={`100`}
                   className={`object-cover w-full aspect-square rounded-3xl mb-2 shadow-md`}
                 />
                 <div className="meta mx-2">
-                  <div className="font-extrabold text-lg mb-1 text-cyan-700">Transform</div>
-                  <div className="font-bold uppercase text-xs mb-2 text-cyan-500">Casual</div>
+                  <div className="font-extrabold text-lg mb-1 text-rose-500">{i.title}</div>
+                  <div className="font-bold uppercase text-xs mb-2 text-pink-500">
+                    {i.category.name}
+                  </div>
                   <div>
-                    <div className="rating flex mb-2 -ml-1">
-                      {Stars((Math.random() * 5).toFixed(1))}
-                    </div>
-                    <div className="played text-sm text-slate-400">
-                      {(Math.random() * 1000).toFixed(1) + `k played`}
+                    <div className="rating flex mb-2 -ml-1">{Stars(i?.rating)}</div>
+                    <div className="played text-sm text-gray-400">
+                      {getFormatedNum(i.played) + ` played`}
                     </div>
                   </div>
                 </div>
@@ -59,4 +63,14 @@ export default function Home({ data }) {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const data = await getDataForHome({ limit: 24, page: 1 });
+
+  return {
+    props: {
+      data,
+    },
+  };
 }

@@ -2,9 +2,9 @@ import { SITE_META } from "@/lib/constants";
 
 export default function Footer(params) {
   return (
-    <footer className="site-footer bg-cyan-600 text-sm text-white">
-      <nav className="bg-cyan-700">
-        <ul className="xl:flex grid grid-cols-2 justify-center gap-x-8 gap-y-4 xl:p-2 p-4 text-cyan-100 drop-shadow">
+    <footer className="site-footer bg-pink-600 text-sm text-white">
+      <nav className="bg-pink-700">
+        <ul className="xl:flex grid grid-cols-2 justify-center gap-x-8 gap-y-4 xl:p-2 p-4 text-pink-100 drop-shadow">
           <li>
             <a href="#">About</a>
           </li>

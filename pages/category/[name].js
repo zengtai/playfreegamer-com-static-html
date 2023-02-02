@@ -29,7 +29,7 @@ export default function Category({ data }) {
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">
-        <h1 className="xl:mt-8 xl:mx-8 m-4 text-2xl font-black text-cyan-700">All Games</h1>
+        <h1 className="xl:mt-8 xl:mx-8 m-4 text-2xl font-black text-pink-700">All Games</h1>
         <ul className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 xl:gap-8 gap-4 xl:mt-8 xl:mx-8 xl:mb-12 m-4">
           {games.map((i) => (
             <li key={i}>
@@ -42,8 +42,8 @@ export default function Category({ data }) {
                   className={`object-cover w-full aspect-square rounded-3xl mb-2 shadow-md`}
                 />
                 <div className="meta mx-2">
-                  <div className="font-extrabold text-lg mb-1 text-cyan-700">Transform</div>
-                  <div className="font-bold uppercase text-xs mb-2 text-cyan-500">Casual</div>
+                  <div className="font-extrabold text-lg mb-1 text-pink-700">Transform</div>
+                  <div className="font-bold uppercase text-xs mb-2 text-pink-500">Casual</div>
                   <div>
                     <div className="rating flex mb-2 -ml-1">
                       {Stars((Math.random() * 5).toFixed(1))}
