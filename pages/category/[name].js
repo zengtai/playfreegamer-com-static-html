@@ -2,7 +2,7 @@ import Image from "@/components/Image";
 import Head from "next/head";
 import Stars from "@/components/Stars";
 
-export default function Home({ data }) {
+export default function Category({ data }) {
   const games = new Array(20).fill(1);
   const star = () => (
     <svg
@@ -29,6 +29,7 @@ export default function Home({ data }) {
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">
+        <h1 className="xl:mt-8 xl:mx-8 m-4 text-2xl font-black text-cyan-700">All Games</h1>
         <ul className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 xl:gap-8 gap-4 xl:mt-8 xl:mx-8 xl:mb-12 m-4">
           {games.map((i) => (
             <li key={i}>

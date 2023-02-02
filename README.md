@@ -1,38 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PlayFreeGamer.com - Static HTML
 
-## Getting Started
+这是为 PlayFreeGamer.com 创建的基于 Next.js 的静态版本。
 
-First, run the development server:
+## 注意
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+由于是最早完成的站，数据跟后期的不通（主要是游戏的分类设置不同），需要单独生成数据使用。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 保留游戏分类
+- 保留或转发原路径规则
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+---
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 游戏数据
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- ID
+- 标题
+- 分类
+- 路径名
+- 图标地址
+- 游戏地址
+- 游戏介绍
+- 创建时间
+- 推荐
+- 评分
+- 玩家数/游戏次数
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+如：
+ZumaMarbles
 
-## Learn More
+- ID：{ZumaMarbles}
+- 标题：{ZumaMarbles}
+- 分类：Puzzles
+- 路径名：{zumamarbles}
+- 图标地址：https://cdn.iwantalipstick.com/gameicon2/jpg/{ZumaMarbles}.jpg
+- 游戏地址：https://uptapapi.uptap.com/h5Game/?type=Game&platform=uptapbox&appid={ZumaMarbles}
+- 游戏介绍：The main objective of the game is to match 3 like marbles by shooting them from the cannon. Match more than 3 and you will get power ups, that you can match again and destroy a wide range of marbles. Match them all before they reach the tunnel, to progress into the next level.
+- 创建时间：2020-06-26T18:11:00
+- 推荐：否
+- 评分：4
+- 玩家数/游戏次数：464
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 路径规则
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 分类页路径：/category/games/{分类名}
+- 详情页路径：/{游戏 id}
+- 游戏页路径：/{游戏 id}/play
 
-## Deploy on Vercel
+安装组件 `npm i`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+运行 `npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+构建 `npm run build`
+
+---
+
+## 页面组成
+
+- 首页
+- 分类页
+- 详情页
+- 游戏页
+- 搜索结果
+- 404
+- 关于
+- 法律（隐私协议、使用条款）
+
+---
+
+## 组件
+
+- 页眉（导航）
+- 页底
+- 页面标题
+- 列表标题
+- 列表
+- 列表项
+- 分页列表
+- 分页导航
+- 无限加载列表
+- 面包屑
+- 游戏详情
+- 图标
+- 广告
+- 统计
+- 搜索
+- 玩游戏\*
