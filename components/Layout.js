@@ -5,9 +5,9 @@ const nunito = Nunito({ subsets: ["latin"] });
 
 export default function Layout({ children }) {
   return (
-    <div className={"flex flex-col min-h-screen " + nunito.className}>
+    <div className={"flex min-h-screen flex-col " + nunito.className}>
       <Header />
-      <main className="main">{children}</main>
+      <main className="main grow">{children}</main>
       <Footer />
     </div>
   );
