@@ -12,3 +12,16 @@
     @apply mx-auto;
   }
 }
+
+.page h2 {
+  @apply my-3 font-bold;
+}
+.page p {
+  @apply my-2;
+}
+.page a {
+  @apply underline;
+}
+.page ul {
+  @apply my-2 ml-4 list-outside list-disc;
+}

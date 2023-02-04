@@ -1,15 +1,14 @@
-import Image from "@/components/Image";
-import Head from "next/head";
-import Stars from "@/components/Stars";
 import { getDataForHome } from "@/lib/api";
-import getIconUrl from "@/utils/getIconUrl";
-import getFormatedNum from "@/utils/getFormatedNum";
-import { SITE_META } from "@/lib/constants";
+import Head from "next/head";
 import GameListItem from "@/components/GameListItem";
+import { SITE_META } from "@/lib/constants";
+import useCurrentData from "@/hooks/useData";
 
 export default function Home({ data }) {
   console.log(`data: `, data);
+
   const games = data.games;
+
   const star = () => (
     <svg
       width="20"
@@ -25,6 +24,10 @@ export default function Home({ data }) {
       />
     </svg>
   );
+
+  const tmp = useCurrentData();
+  console.log(`tmp`, tmp);
+
   return (
     <>
       <Head>

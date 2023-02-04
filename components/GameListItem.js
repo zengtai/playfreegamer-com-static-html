@@ -2,6 +2,7 @@ import Image from "./Image";
 import getIconUrl from "@/utils/getIconUrl";
 import getFormatedNum from "@/utils/getFormatedNum";
 import Stars from "./Stars";
+import Link from "next/link";
 export default function GameListItem({ item }) {
   const i = item;
   return (
@@ -9,7 +10,7 @@ export default function GameListItem({ item }) {
       key={i.slug}
       className="rounded-md border border-rose-100 bg-white p-3 shadow shadow-rose-50 xl:p-4"
     >
-      <a href={`/${i.appid}`}>
+      <Link href={`/${i.slug}`}>
         <Image
           src={getIconUrl(i.appid)}
           alt={i.title}
@@ -21,7 +22,7 @@ export default function GameListItem({ item }) {
           <div className="mb-1 text-base font-extrabold leading-5 text-rose-500">
             {i.title}
           </div>
-          <div className="mb-2 text-xs font-bold uppercase text-gray-400">
+          <div className="mb-2 text-xs font-bold uppercase text-red-900">
             {i?.category?.name}
           </div>
 
@@ -37,10 +38,10 @@ export default function GameListItem({ item }) {
             {getFormatedNum(i.played) + ` played`}
           </div>
           <button className="rounded-full border-2 border-rose-200 bg-rose-100 to-white px-4 py-2 text-sm font-bold text-rose-500 shadow shadow-rose-50">
-            Play Now
+            Play
           </button>
         </div>
-      </a>
+      </Link>
     </li>
   );
 }
