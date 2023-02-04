@@ -55,7 +55,7 @@ export default function Game({ data }) {
                   {i?.category?.name}
                 </Link>
               </div>
-              <div className="rating mb-2 -ml-1 flex items-center justify-center xl:justify-start">
+              <div className="rating mb-2 -ml-1 flex items-center">
                 {Stars(i?.rating)}
                 <span className="ml-1 text-lg font-black text-orange-600">
                   {(i?.rating === 5 ? i?.rating - 0.1 : i?.rating).toFixed(1)}

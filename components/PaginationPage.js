@@ -15,7 +15,7 @@ export default function PaginationPage({
         totalItems={totalGames}
         currentPage={currentPage}
         itemsPerPage={perPage}
-        renderPageLink={(page) => `/catgory/$slug}/${page}`}
+        renderPageLink={(page) => `/catgory/${games[0].category.slug}/${page}`}
       />
     </div>
   );
