@@ -50,6 +50,7 @@ export async function getStaticProps(ctx) {
       currentPage: 1,
       pageInfo: category[0],
     },
+    revalidate: 60 * 60 * 24, // 天
   };
 }
 

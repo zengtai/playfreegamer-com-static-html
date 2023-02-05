@@ -61,6 +61,7 @@ export const getStaticProps = async (ctx) => {
     props: {
       data,
     },
+    revalidate: 60 * 60 * 24, // 天
   };
 };
 
