@@ -141,14 +141,18 @@ export default function Header() {
         <nav
           className={`${
             !menuOpen ? `hidden` : `flex w-full`
-          } absolute left-0 top-16 flex-col justify-between rounded-b-3xl bg-rose-400 p-2 xl:static xl:flex xl:flex-row xl:rounded-full`}
+          } absolute left-0 top-16 z-10 flex-col justify-between rounded-b-3xl bg-rose-400 p-2 xl:static xl:flex xl:flex-row xl:rounded-full`}
         >
           <ul className="mb-6 grid grid-cols-3 items-center gap-2 text-center font-bold text-white xl:mb-0 xl:ml-2 xl:flex xl:flex-wrap xl:gap-y-3">
             {navItems.map((i) => (
               <li key={i.text}>
                 <Link
                   className={`block whitespace-nowrap rounded-full ${
-                    !(i.link === asPath || i.link === `${asPath}/`)
+                    !(
+                      i.link === asPath ||
+                      i.link === `${asPath}/` ||
+                      (i.link !== `/` && asPath.match(i.link))
+                    )
                       ? "bg-rose-300 text-rose-700"
                       : "bg-rose-50 text-rose-600"
                   } p-4 shadow xl:px-4 xl:py-1`}

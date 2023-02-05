@@ -27,7 +27,8 @@ export default function GameListItem({ item }) {
           </div>
 
           <div className="rating mb-2 -ml-1 flex items-center justify-center">
-            {Stars(i?.rating)}
+            {/* { Stars(i?.rating) } */}
+            <Stars rating={i?.rating} />
             <span className="ml-1 text-lg font-black text-orange-600">
               {(i?.rating === 5 ? i?.rating - 0.1 : i?.rating).toFixed(1)}
             </span>

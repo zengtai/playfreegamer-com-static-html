@@ -1,10 +1,11 @@
 import NextImage from "next/image";
 import { useEffect, useState } from "react";
-import Vercel from "@/public/vercel.svg";
-import Spinner from "@/public/spinner.svg";
+import NoImage from "@/public/images/no-image-m.png";
+import Spinner from "@/public/images/spinner.svg";
+// import Spinner from "@/public/spinner.svg";
 
 export default function Image({
-  fallbackImage = Vercel,
+  fallbackImage = NoImage,
   loadingImage = Spinner,
   src,
   alt,

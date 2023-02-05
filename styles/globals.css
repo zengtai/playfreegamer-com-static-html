@@ -25,3 +25,7 @@
 .page ul {
   @apply my-2 ml-4 list-outside list-disc;
 }
+
+.banner {
+  @apply mx-auto max-w-5xl;
+}

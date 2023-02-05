@@ -7,6 +7,9 @@ import Stars from "@/components/Stars";
 import Link from "next/link";
 import GameListItem from "@/components/GameListItem";
 import getGameUrl from "@/utils/getGameUrl";
+import Star from "@/components/Star";
+import AdSense from "@/components/AdSense";
+import { ADS_SLOT_ID } from "@/lib/constants";
 
 export default function Game({ data }) {
   console.log(`data`, data);
@@ -37,6 +40,7 @@ export default function Game({ data }) {
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">
+        {/* <AdSense slot={ADS_SLOT_ID.DETAIL} /> */}
         <div className="mx-auto max-w-3xl">
           <div className="m-4 flex xl:my-8 xl:flex-row-reverse xl:justify-between">
             <Image
@@ -56,7 +60,7 @@ export default function Game({ data }) {
                 </Link>
               </div>
               <div className="rating mb-2 -ml-1 flex items-center">
-                {Stars(i?.rating)}
+                <Star rating={i?.rating} />
                 <span className="ml-1 text-lg font-black text-orange-600">
                   {(i?.rating === 5 ? i?.rating - 0.1 : i?.rating).toFixed(1)}
                 </span>
@@ -74,13 +78,14 @@ export default function Game({ data }) {
           <div className="m-4 text-sm text-gray-500 xl:text-base">
             {i.description}
           </div>
+          <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} />
         </div>
         <div className="m-4 border-t-2 border-rose-100 pt-4 text-lg font-bold text-rose-500 xl:mx-8">
           Related Games
         </div>
         <ul className="m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-4 xl:mb-12 xl:grid-cols-6 xl:gap-4">
           {data.related.map((i) => (
-            <GameListItem key={i.id} item={i} />
+            <GameListItem key={i.appid} item={i} />
           ))}
         </ul>
       </div>

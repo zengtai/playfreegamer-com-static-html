@@ -10,7 +10,7 @@ export default function Footer(params) {
             <Link href="/about">About</Link>
           </li>
           <li>
-            <Link href="/contacts">Contacts</Link>
+            <Link href="/contact">Contact</Link>
           </li>
           <li>
             <Link href="/privacy-policy">Privacy Policy</Link>

@@ -38,7 +38,7 @@ export default function Layout({ children }) {
         <Footer />
         <button
           onClick={scrollToTop}
-          className={`fixed right-2 bottom-2 z-10 ${
+          className={`fixed right-3 bottom-3 z-10 ${
             showScrollTop ? `grid` : `hidden`
           } h-12 w-12 content-center justify-center rounded-full bg-rose-500/50 text-white`}
         >
