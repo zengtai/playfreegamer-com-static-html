@@ -3,12 +3,12 @@ export default function Stars({ rating = 0 }) {
   for (let i = 0; i < 5; i++) {
     i < Math.floor(rating)
       ? stars.push(
-          <svg key={i} className="h-5 w-5 text-orange-500">
+          <svg key={i} className="star">
             <use xlinkHref="#__star"></use>
           </svg>
         )
       : stars.push(
-          <svg key={i} className="h-5 w-5 text-orange-200">
+          <svg key={i} className="un-star">
             <use xlinkHref="#__star"></use>
           </svg>
         );

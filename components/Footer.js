@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Footer(params) {
   return (
-    <footer className="site-footer border-t border-t-rose-200 bg-rose-400 text-center text-sm text-white">
-      <nav className="border-b border-b-black/10">
-        <ul className="grid grid-cols-2 gap-x-8 gap-y-4 p-4 text-white drop-shadow xl:flex xl:justify-center">
+    <footer className="site-footer">
+      <nav>
+        <ul>
           <li>
             <Link href="/about">About</Link>
           </li>
@@ -24,7 +24,7 @@ export default function Footer(params) {
           </li>
         </ul>
       </nav>
-      <p className="m-4 flex justify-center gap-2 pb-4 text-xs text-red-900/80">
+      <p>
         <span
           dangerouslySetInnerHTML={{
             __html: `&copy; ${new Date().getFullYear()} ${SITE_META.NAME}.`,

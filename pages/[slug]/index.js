@@ -46,54 +46,50 @@ export default function Game({ data }) {
 
         <meta
           name="keywords"
-          content={`${i.title}, play ${i.title}, ${i.title} game, ${i.title} games`}
+          content={`${i.title}, ${i.appid}, play ${i.title}, play ${i.appid}, ${i.title} game, ${i.appid} game, ${i.title} games, ${i.appid} games`}
         />
       </Head>
       <div className="hidden">{star()}</div>
-      <div className="container">
+      <div className="detail container">
         {/* <AdSense slot={ADS_SLOT_ID.DETAIL} /> */}
         <div className="mx-auto max-w-3xl">
-          <div className="m-4 flex xl:my-8 xl:flex-row-reverse xl:justify-between">
+          <div className="info">
             <Image
               src={getIconUrl(i.appid)}
               alt={i.title}
               width={`100`}
               height={`100`}
-              className={`w-28 rounded-2xl object-cover shadow-md xl:w-48`}
+              className={`info-image`}
             />
-            <div className="meta ml-3 xl:ml-0">
-              <h1 className="mb-2 text-xl font-black leading-5 text-rose-500 xl:text-5xl">
-                {i.title}
-              </h1>
-              <div className="mb-2 text-xs font-bold uppercase text-red-900 xl:text-base">
+            <div className="meta">
+              <h1 className="">{i.title}</h1>
+              <div className="category">
                 <Link href={`/category/${i?.category.slug}`}>
                   {i?.category?.name}
                 </Link>
               </div>
-              <div className="rating mb-2 -ml-1 flex items-center">
+              <div className="rating">
                 <Stars rating={i?.rating} />
-                <span className="ml-1 text-lg font-black text-orange-600">
+                <span className="score">
                   {(i?.rating === 5 ? i?.rating - 0.1 : i?.rating).toFixed(1)}
                 </span>
               </div>{" "}
-              <div className="played text-sm text-gray-400">
+              <div className="played">
                 {getFormatedNum(i.played) + ` played`}
               </div>
             </div>
           </div>
           <div className="mx-4 flex justify-center">
-            <button className="w-full max-w-sm rounded-full bg-rose-400 px-4 py-2 text-lg font-black uppercase text-white  shadow-lg shadow-rose-100">
-              <a href={getGameUrl(i.appid)}>Play Now</a>
+            <button className="play-btn">
+              <a title={`Play "${i.title}" Now`} href={getGameUrl(i.appid)}>
+                Play Now
+              </a>
             </button>
           </div>
-          <div className="m-4 text-sm text-gray-500 xl:text-base">
-            {i.description}
-          </div>
+          <div className="desc">{i.description}</div>
           <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} />
         </div>
-        <div className="m-4 border-t-2 border-rose-100 pt-4 text-lg font-bold text-rose-500 xl:mx-8">
-          Related Games
-        </div>
+        <div className="section-title">Related Games</div>
         <ul className="m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-4 xl:mb-12 xl:grid-cols-6 xl:gap-4">
           {data.related.map((i) => (
             <GameListItem key={i.appid} item={i} />

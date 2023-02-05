@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import { SITE_META } from "@/lib/constants";
 const Navbar = dynamic(() => import("./Navbar"));
 const SearchPanel = dynamic(() => import("./SearchPanel"));
 // import Navbar from "./Navbar";
@@ -23,10 +24,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="site-header bg-rose-400 shadow shadow-rose-400/40">
-        <div className="container relative flex items-center justify-between xl:flex-row">
+      <header className="site-header">
+        <div className="container">
           <div className="branding m-4">
-            <Link href={`/`}>
+            <Link href={`/`} title={SITE_META.NAME}>
               <Image
                 src={Logo}
                 width="256"
@@ -41,6 +42,7 @@ export default function Header() {
             <button
               onClick={() => setShowSearch(!showSearch)}
               className="search-icon p-2"
+              title="Search"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

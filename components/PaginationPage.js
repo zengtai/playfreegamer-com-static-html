@@ -47,11 +47,12 @@ export default function PaginationPage({
         {/* {currentPage === 1 ? <AdSense slot={ADS_SLOT_ID.CATEGORY} /> : null} */}
         {/* 列表 */}
 
-        <ul className="m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-8 xl:mb-12 xl:grid-cols-6 xl:gap-4">
+        <ul className="game-list">
           {games.map((i) => (
             <GameListItem key={i?.appid} item={i} />
           ))}
         </ul>
+
         {perPage < totalGames ? (
           <Pagination
             totalItems={totalGames}

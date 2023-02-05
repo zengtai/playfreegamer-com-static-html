@@ -35,9 +35,7 @@ export default function Layout({ children }) {
     <>
       <div className={"flex min-h-screen flex-col " + nunito.className}>
         <Header />
-        <main className="main grow bg-gradient-to-t from-rose-50 to-white">
-          {children}
-        </main>
+        <main className="main">{children}</main>
         <Footer />
         <ScrollTopButton
           showScrollTop={showScrollTop}
