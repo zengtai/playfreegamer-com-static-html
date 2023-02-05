@@ -4,10 +4,10 @@ import PageTitle from "@/components/PageTitle";
 
 export default function About(params) {
   const content = `
-    <p>Welcome to PlayFreeGamer.com! Our website is the leading platform for free online gaming, hosting high-quality hyper casual games for you to enjoy by killing time when you are bored. Along with more complex adventure and puzzle strategy games, that can save automatically and are almost endless so you won’t get bored. </p>
-    <p>We develop and publish our own H5 games, and currently we have more than a 100, which you can freely play, without requiring you to download. Our games can be played on any device or a browser. Such games include Solitaire Classic, Fly&Pass, Board The Train, Defense Tower, Idle Restaurant Tycoon.</p>
-    <p>The games are divided in categories, which is therefore easy for you and players all around the world to have fun with many puzzle, strategy, card or action games. Our games are entirely free and won’t require you to pay any services, as they are safe and secure.</p>
-    <p>Should you have any feedback for us, please do not hesitate to reach out! Have fun on our platform and make sure you follow us for more up to date content and news on our socials!</p>
+    <p>Welcome to PlayFreeGamer.com! We're so glad you're here! Our website is the perfect place to enjoy high-quality online gaming, with a variety of hyper casual games that are perfect for killing time when you're bored. But that's not all – we also have a wide range of adventure, puzzle, and strategy games that are almost endless, so you won't get bored.</p>
+    <p>We're proud to be the developers and publishers of our own HTML5 games, and we currently have over 240 games for you to enjoy – all free, and all accessible from any device or browser. From Fire The Gun, Fever Racing, Board The Train, Crazy Knife, to Traffic Run, there's something for everyone!</p>
+    <p>To make it even easier for you to find the perfect game, we've divided our games into categories, so you can quickly find what you're looking for. And the best part? Our games are completely free, safe, and secure, so you don't have to worry about paying for anything.</p>
+    <p>If you have any feedback for us, please don't hesitate to reach out – we'd love to hear from you! And if you want to stay up-to-date with all our latest content and news, be sure to follow us on our social media platforms! Have a great time on our platform!</p>
   `;
   return (
     <>

@@ -13,10 +13,14 @@ export default function Footer(params) {
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link referrerPolicy="no-referrer" href="/privacy-policy">
+              Privacy Policy
+            </Link>
           </li>
           <li>
-            <Link href="/terms-of-use">Terms of Use</Link>
+            <Link referrerPolicy="no-referrer" href="/terms-of-use">
+              Terms of Use
+            </Link>
           </li>
         </ul>
       </nav>

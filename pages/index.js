@@ -6,6 +6,7 @@ import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
 import ListTitle from "@/components/ListTitle";
+import { basePath } from "@/next.config";
 
 export default function Home({ data }) {
   console.log(`data: `, data);
@@ -35,9 +36,14 @@ export default function Home({ data }) {
     <>
       <Head>
         <title>{SITE_META.NAME}</title>
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="canonical" href={`${SITE_META.URL}${basePath || ``}`} />
         <meta name="description" content={SITE_META.DESCRIPTION} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="keywords"
+          content={`${SITE_META.NAME.toLowerCase()}, ${SITE_META.NAME.toLowerCase()}s, instant games, easy game, free online games, casual games, puzzle games, girl games, browser games, free games to play, arcade games, online games for phone, best online games, free games for phone, play games online`}
+        />
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">

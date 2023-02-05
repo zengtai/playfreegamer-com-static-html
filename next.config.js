@@ -9,6 +9,7 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "development" ? false : true,
   },
   trailingSlash: true,
+  // basePath: "/m",
 };
 
 module.exports = nextConfig;

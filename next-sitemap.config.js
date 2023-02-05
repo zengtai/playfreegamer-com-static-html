@@ -3,7 +3,7 @@ module.exports = {
   siteUrl: process.env.SITE_URL || "https://www.playfreegamer.com",
   // generateRobotsTxt: true, // (optional)
   // ...other options
-  exclude: ["/privacy-policy", "/terms-of-use", "/about", "/contact"],
+  exclude: ["/privacy-policy", "/terms-of-use"],
 };
 
 // export default config;
