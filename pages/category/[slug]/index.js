@@ -1,17 +1,14 @@
 import Head from "next/head";
-import Link from "next/link";
 
-import PaginatedPage, { PER_PAGE } from "./page/[page]";
+import { PER_PAGE } from "./[page]";
 
-import { getAllCategoryWithSlug, getDataByCategorySlug } from "@/lib/api";
-import GameListItem from "@/components/GameListItem";
-import { SITE_META } from "@/lib/constants";
-import Pagination from "@/components/Pagination";
 import PaginationPage from "@/components/PaginationPage";
+import { getAllCategoryWithSlug, getDataByCategorySlug } from "@/lib/api";
+import { SITE_META } from "@/lib/constants";
 import { basePath } from "@/next.config";
 
 export default function Category({ pageInfo, games, currentPage, totalGames }) {
-  const categoryName = pageInfo.name;
+  const categoryName = pageInfo?.name;
   return (
     <>
       <Head>
@@ -57,9 +54,9 @@ export async function getStaticProps(ctx) {
 }
 
 export const getStaticPaths = async () => {
-  const data = await getAllCategoryWithSlug();
+  const allCategorySlugs = await getAllCategoryWithSlug();
 
-  const paths = data.map((i) => ({ params: { slug: i.slug } }));
+  const paths = allCategorySlugs.map((i) => ({ params: { slug: i.slug } }));
 
   return {
     paths,

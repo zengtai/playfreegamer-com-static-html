@@ -11,7 +11,8 @@ export default function PaginationPage({
   perPage,
   games,
 }) {
-  console.log(`pageInfo`, pageInfo);
+  // console.log("🚀 ~ file: PaginationPage.js:14 ~ pageInfo", pageInfo);
+
   const star = () => (
     <svg
       width="20"
@@ -41,15 +42,15 @@ export default function PaginationPage({
           </p>
         </header> */}
         <ListTitle
-          title={`${pageInfo.name} Games`}
-          description={pageInfo.description}
+          title={`${pageInfo?.name} Games`}
+          description={pageInfo?.description}
         />
         {/* {currentPage === 1 ? <AdSense slot={ADS_SLOT_ID.CATEGORY} /> : null} */}
         {/* 列表 */}
 
         <ul className="game-list">
           {games.map((i) => (
-            <GameListItem key={i?.appid} item={i} />
+            <GameListItem key={i.appid} item={i} />
           ))}
         </ul>
 
@@ -58,7 +59,9 @@ export default function PaginationPage({
             totalItems={totalGames}
             currentPage={currentPage}
             itemsPerPage={perPage}
-            renderPageLink={(page) => `/category/${pageInfo.slug}/page/${page}`}
+            renderPageLink={(page) =>
+              `/category/${pageInfo.slug}/${page === 1 ? `` : page + `/`}`
+            }
           />
         ) : null}
       </div>

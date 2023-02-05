@@ -10,6 +10,7 @@ import * as gtag from "@/lib/gtag";
 
 export default function App({ Component, pageProps }) {
   const Router = useRouter();
+  // console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
   useEffect(() => {
     const handleStart = (url) => {
       console.log(`Loading: ${url}`);

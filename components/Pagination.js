@@ -10,7 +10,7 @@ export default function Pagination({
   renderPageLink,
 }) {
   const pages = usePagination(totalItems, currentPage, itemsPerPage);
-  console.log(`pages`, pages);
+
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const prevAvailable = currentPage - 1 > 0;
   const nextAvailable = currentPage + 1 <= totalPages;
@@ -30,7 +30,7 @@ export default function Pagination({
         )}
       </button>
       <ol className="hidden gap-6 text-rose-700 xl:flex xl:items-center">
-        {pages?.map((pageNumber, i) =>
+        {pages.map((pageNumber, i) =>
           pageNumber === dotts ? (
             <li key={i}>{pageNumber}</li>
           ) : (

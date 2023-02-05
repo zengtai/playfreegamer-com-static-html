@@ -9,7 +9,7 @@ import ListTitle from "@/components/ListTitle";
 import { basePath } from "@/next.config";
 
 export default function Home({ data }) {
-  console.log(`data: `, data);
+  console.log("🚀 ~ file: index.js:12 ~ Home ~ data", data);
 
   const games = data.games;
 

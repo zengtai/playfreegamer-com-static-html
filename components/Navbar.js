@@ -3,14 +3,14 @@ import { useRouter } from "next/router";
 
 export default function Navbar({ menuOpen }) {
   const router = useRouter();
-  const current = router.query;
-  const pathname = router.pathname;
+  // const current = router.query;
+  // const pathname = router.pathname;
   const asPath = router.asPath;
 
-  console.log(`router`, router);
-  console.log(`current`, current);
-  console.log(`pathname`, pathname);
-  console.log(`asPath`, asPath);
+  // console.log(`router`, router);
+  // console.log(`current`, current);
+  // console.log(`pathname`, pathname);
+  // console.log(`asPath`, asPath);
 
   const navItems = [
     {
