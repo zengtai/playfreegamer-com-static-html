@@ -11,7 +11,7 @@ export default function About(params) {
   return (
     <>
       <Head>
-        <title>{`About ${SITE_META.NAME}`}</title>
+        <title>{`About | ${SITE_META.NAME}`}</title>
       </Head>
       <div className="page container">
         <h1 className="m-4 text-2xl font-black text-rose-500 xl:mx-8 xl:mt-8">
