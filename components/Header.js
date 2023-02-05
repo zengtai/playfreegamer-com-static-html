@@ -108,7 +108,7 @@ export default function Header() {
               />
             </svg>
           </button>
-          <button onClick={toggleMenu} className="m-4 p-2 text-white xl:hidden">
+          <button onClick={toggleMenu} className="m-3 p-2 text-white xl:hidden">
             {!menuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"

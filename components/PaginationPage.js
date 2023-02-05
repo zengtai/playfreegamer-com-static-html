@@ -1,6 +1,7 @@
 import { ADS_SLOT_ID } from "@/lib/constants";
 import AdSense from "./AdSense";
 import GameListItem from "./GameListItem";
+import ListTitle from "./ListTitle";
 import Pagination from "./Pagination";
 
 export default function PaginationPage({
@@ -31,14 +32,18 @@ export default function PaginationPage({
       <div className="hidden">{star()}</div>
       <div className="container">
         {currentPage === 1 ? <AdSense slot={ADS_SLOT_ID.CATEGORY} /> : null}
-        <header className="m-4 flex flex-col items-center">
+        {/* <header className="m-4 flex flex-col items-center">
           <h1 className="mb-2 text-2xl font-black text-rose-500 xl:mx-8 xl:mt-8">
             {pageInfo.name} Games
           </h1>
           <p className="max-w-3xl text-sm leading-6 text-gray-500">
             {pageInfo.description}
           </p>
-        </header>
+        </header> */}
+        <ListTitle
+          title={`${pageInfo.name} Games`}
+          description={pageInfo.description}
+        />
         {/* {currentPage === 1 ? <AdSense slot={ADS_SLOT_ID.CATEGORY} /> : null} */}
         {/* 列表 */}
 

@@ -1,5 +1,6 @@
 import { SITE_META } from "@/lib/constants";
 import Head from "next/head";
+import PageTitle from "@/components/PageTitle";
 
 export default function About(params) {
   const content = `
@@ -14,9 +15,7 @@ export default function About(params) {
         <title>{`About | ${SITE_META.NAME}`}</title>
       </Head>
       <div className="page container">
-        <h1 className="m-4 text-2xl font-black text-rose-500 xl:mx-8 xl:mt-8">
-          About
-        </h1>
+        <PageTitle title={`About`} />
         <div
           className="m-4 text-sm text-red-900 xl:mx-8"
           dangerouslySetInnerHTML={{ __html: content }}

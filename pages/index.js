@@ -5,6 +5,8 @@ import { ADS_SLOT_ID, SITE_META } from "@/lib/constants";
 import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
+import ListTitle from "@/components/ListTitle";
+
 export default function Home({ data }) {
   console.log(`data: `, data);
 
@@ -40,6 +42,7 @@ export default function Home({ data }) {
       <div className="hidden">{star()}</div>
       <div className="container">
         <AdSense />
+        <ListTitle title={`Hot Games`} />
         <ul className="m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-8 xl:mb-12 xl:grid-cols-6 xl:gap-4">
           {games.map((i) => (
             <GameListItem key={i.appid} item={i} />
