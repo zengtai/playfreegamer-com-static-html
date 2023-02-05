@@ -18,6 +18,7 @@ export default function GameDetail({ item }) {
           width={`100`}
           height={`100`}
           className={`info-image`}
+          loading={`eager`}
         />
         <div className="meta">
           <h1 className="">{i.title}</h1>

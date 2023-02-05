@@ -3,7 +3,7 @@ import getIconUrl from "@/utils/getIconUrl";
 import getFormatedNum from "@/utils/getFormatedNum";
 import Stars from "./Stars";
 import Link from "next/link";
-export default function GameListItem({ item }) {
+export default function GameListItem({ item, index }) {
   const i = item;
   return (
     <li key={i.slug} className="game-list-item">
@@ -14,6 +14,7 @@ export default function GameListItem({ item }) {
           width={`100`}
           height={`100`}
           className={`list-image`}
+          loading={index <= 5 ? `eager` : `lazy`}
         />
         <div className="list-meta">
           <div className="title">{i.title}</div>

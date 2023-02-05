@@ -1,12 +1,13 @@
 import { getDataForHome } from "@/lib/api";
 import Head from "next/head";
-import GameListItem from "@/components/GameListItem";
+// import GameListItem from "@/components/GameListItem";
 import { ADS_SLOT_ID, SITE_META } from "@/lib/constants";
 import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
 import ListTitle from "@/components/ListTitle";
 import { basePath } from "@/next.config";
+import GameList from "@/components/GameList";
 
 export default function Home({ data }) {
   console.log("🚀 ~ file: index.js:12 ~ Home ~ data", data);
@@ -49,11 +50,7 @@ export default function Home({ data }) {
       <div className="container">
         <AdSense />
         <ListTitle title={`Hot Games`} />
-        <ul className="game-list">
-          {games.map((i) => (
-            <GameListItem key={i.appid} item={i} />
-          ))}
-        </ul>
+        <GameList items={games} />
       </div>
     </>
   );

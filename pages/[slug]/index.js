@@ -1,5 +1,6 @@
 import GameDetail from "@/components/GameDetail";
-import GameListItem from "@/components/GameListItem";
+import GameList from "@/components/GameList";
+// import GameListItem from "@/components/GameListItem";
 import { getAllGamesWithSlug, getGameDataBySlug } from "@/lib/api";
 import { SITE_META } from "@/lib/constants";
 import { basePath } from "@/next.config";
@@ -46,11 +47,7 @@ export default function Game({ data }) {
         {/* <AdSense slot={ADS_SLOT_ID.DETAIL} /> */}
         <GameDetail item={i} />
         <div className="section-title">Related Games</div>
-        <ul className="m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-4 xl:mb-12 xl:grid-cols-6 xl:gap-4">
-          {data.related.map((i) => (
-            <GameListItem key={i.appid} item={i} />
-          ))}
-        </ul>
+        <GameList items={data.related} />
       </div>
     </>
   );

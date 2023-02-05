@@ -1,6 +1,7 @@
 import { ADS_SLOT_ID } from "@/lib/constants";
 import AdSense from "./AdSense";
-import GameListItem from "./GameListItem";
+import GameList from "./GameList";
+// import GameListItem from "./GameListItem";
 import ListTitle from "./ListTitle";
 import Pagination from "./Pagination";
 
@@ -48,11 +49,7 @@ export default function PaginationPage({
         {/* {currentPage === 1 ? <AdSense slot={ADS_SLOT_ID.CATEGORY} /> : null} */}
         {/* 列表 */}
 
-        <ul className="game-list">
-          {games.map((i) => (
-            <GameListItem key={i.appid} item={i} />
-          ))}
-        </ul>
+        <GameList items={games} />
 
         {perPage < totalGames ? (
           <Pagination
