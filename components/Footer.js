@@ -7,18 +7,30 @@ export default function Footer(params) {
       <nav>
         <ul>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/about" title="About">
+              About
+            </Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact" title="Contact">
+              Contact
+            </Link>
           </li>
           <li>
-            <Link referrerPolicy="no-referrer" href="/privacy-policy">
+            <Link
+              referrerPolicy="no-referrer"
+              title="Privacy Policy"
+              href="/privacy-policy"
+            >
               Privacy Policy
             </Link>
           </li>
           <li>
-            <Link referrerPolicy="no-referrer" href="/terms-of-use">
+            <Link
+              referrerPolicy="no-referrer"
+              title="Terms of Use"
+              href="/terms-of-use"
+            >
               Terms of Use
             </Link>
           </li>
