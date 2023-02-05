@@ -1,22 +1,14 @@
-import { getGameDataBySlug, getAllGamesWithSlug } from "@/lib/api";
-import Head from "next/head";
-import Image from "@/components/Image";
-import getIconUrl from "@/utils/getIconUrl";
-import getFormatedNum from "@/utils/getFormatedNum";
-import Stars from "@/components/Stars";
-import Link from "next/link";
+import GameDetail from "@/components/GameDetail";
 import GameListItem from "@/components/GameListItem";
-import getGameUrl from "@/utils/getGameUrl";
-import AdSense from "@/components/AdSense";
-import { ADS_SLOT_ID, SITE_META } from "@/lib/constants";
+import { getAllGamesWithSlug, getGameDataBySlug } from "@/lib/api";
+import { SITE_META } from "@/lib/constants";
 import { basePath } from "@/next.config";
+import Head from "next/head";
 
 export default function Game({ data }) {
   console.log(`data`, data);
   const i = data?.game;
-  const categoryName = i?.category?.name;
-  const categorySlug = i?.category?.slug;
-  const categoryDesc = i?.category?.description;
+
   const star = () => (
     <svg
       width="20"
@@ -52,43 +44,7 @@ export default function Game({ data }) {
       <div className="hidden">{star()}</div>
       <div className="detail container">
         {/* <AdSense slot={ADS_SLOT_ID.DETAIL} /> */}
-        <div className="mx-auto max-w-3xl">
-          <div className="info">
-            <Image
-              src={getIconUrl(i.appid)}
-              alt={i.title}
-              width={`100`}
-              height={`100`}
-              className={`info-image`}
-            />
-            <div className="meta">
-              <h1 className="">{i.title}</h1>
-              <div className="category">
-                <Link href={`/category/${i?.category.slug}`}>
-                  {i?.category?.name}
-                </Link>
-              </div>
-              <div className="rating">
-                <Stars rating={i?.rating} />
-                <span className="score">
-                  {(i?.rating === 5 ? i?.rating - 0.1 : i?.rating).toFixed(1)}
-                </span>
-              </div>{" "}
-              <div className="played">
-                {getFormatedNum(i.played) + ` played`}
-              </div>
-            </div>
-          </div>
-          <div className="mx-4 flex justify-center">
-            <button className="play-btn">
-              <a title={`Play "${i.title}" Now`} href={getGameUrl(i.appid)}>
-                Play Now
-              </a>
-            </button>
-          </div>
-          <div className="desc">{i.description}</div>
-          <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} />
-        </div>
+        <GameDetail item={i} />
         <div className="section-title">Related Games</div>
         <ul className="m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-4 xl:mb-12 xl:grid-cols-6 xl:gap-4">
           {data.related.map((i) => (

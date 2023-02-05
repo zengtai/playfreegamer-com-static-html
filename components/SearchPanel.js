@@ -1,7 +1,7 @@
 import { Combobox, Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 
 import useCurrentData from "@/hooks/useData";
 
