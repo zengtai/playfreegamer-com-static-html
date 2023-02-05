@@ -1,9 +1,9 @@
-import dynamic from "next/dynamic";
-// import Footer from "./Footer";
-const Footer = dynamic(() => import("./Footer"));
+// import dynamic from "next/dynamic";
+import Footer from "./Footer";
+// const Footer = dynamic(() => import("./Footer"));
 import Header from "./Header";
 // import SearchPanel from "./SearchPanel";
-const SearchPanel = dynamic(() => import("./SearchPanel"));
+// const SearchPanel = dynamic(() => import("./SearchPanel"));
 import { Nunito } from "@next/font/google";
 import { useState, useEffect } from "react";
 import ScrollTopButton from "./ScrollTopButton";
@@ -44,7 +44,6 @@ export default function Layout({ children }) {
           scrollToTop={scrollToTop}
         />
       </div>
-      <SearchPanel />
     </>
   );
 }

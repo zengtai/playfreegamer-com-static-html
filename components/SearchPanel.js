@@ -7,35 +7,39 @@ import useCurrentData from "@/hooks/useData";
 
 import getIconUrl from "@/utils/getIconUrl";
 
-export default function SearchPanel() {
+export default function SearchPanel({ isShow, updateState }) {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(isShow); // 控制显示
   const [query, setQuery] = useState("");
 
   const searchData = useCurrentData();
   console.log(`searchData: `, searchData);
 
-  useEffect(() => {
-    let btn = document.querySelector(`.search-icon`);
+  function handleClick() {
+    updateState(!isOpen);
+  }
 
-    function onKeydown(event) {
-      if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
-        setIsOpen(!isOpen);
-      }
-    }
+  // useEffect(() => {
+  //   let btn = document.querySelector(`.search-icon`);
 
-    function handleClick() {
-      setIsOpen(!isOpen);
-    }
+  //   function onKeydown(event) {
+  //     if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
+  //       setIsOpen(!isOpen);
+  //     }
+  //   }
 
-    window.addEventListener(`keydown`, onKeydown);
+  //   function handleClick() {
+  //     setIsOpen(!isOpen);
+  //   }
 
-    btn && btn.addEventListener(`click`, handleClick);
-    return () => {
-      window.removeEventListener(`keydown`, onKeydown);
-      btn && btn.removeEventListener(`click`, handleClick);
-    };
-  }, [isOpen]);
+  //   window.addEventListener(`keydown`, onKeydown);
+
+  //   btn && btn.addEventListener(`click`, handleClick);
+  //   return () => {
+  //     window.removeEventListener(`keydown`, onKeydown);
+  //     btn && btn.removeEventListener(`click`, handleClick);
+  //   };
+  // }, [isOpen]);
 
   // let names = data;
   const names = useCurrentData();
@@ -76,7 +80,7 @@ export default function SearchPanel() {
     >
       <Dialog
         // open={isOpen}
-        onClose={setIsOpen}
+        onClose={(setIsOpen, handleClick)}
         className="fixed inset-0 top-0 z-50 overflow-y-auto p-4  pt-[25vh]"
       >
         <Transition.Child
@@ -100,6 +104,7 @@ export default function SearchPanel() {
           <Combobox
             onChange={(game) => {
               setIsOpen(false);
+              handleClick();
               // setQuery("");
               // `/game/${game.name}`
               // window.location.href = `/game/${game}`;
