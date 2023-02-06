@@ -9,6 +9,7 @@ import getFormatedNum from "@/utils/getFormatedNum";
 
 export default function GameDetail({ item }) {
   const i = item;
+  const randomKey = `${i.appid}-${Math.random()}`;
   return (
     <div className="mx-auto max-w-3xl">
       <div className="info">
@@ -44,7 +45,7 @@ export default function GameDetail({ item }) {
         </button>
       </div>
       <div className="desc">{i.description}</div>
-      <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} />
+      <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} key={randomKey} />
     </div>
   );
 }

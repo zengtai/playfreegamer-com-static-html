@@ -32,6 +32,7 @@ export default function Home({ data }) {
 
   const tmp = useCurrentData();
   console.log(`tmp`, tmp);
+  const randomKey = `index-${Math.random()}`;
 
   return (
     <>
@@ -48,7 +49,7 @@ export default function Home({ data }) {
       </Head>
       <div className="hidden">{star()}</div>
       <div className="container">
-        <AdSense />
+        <AdSense key={randomKey} />
         <ListTitle title={`Hot Games`} />
         <GameList items={games} />
       </div>

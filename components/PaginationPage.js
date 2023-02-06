@@ -29,11 +29,15 @@ export default function PaginationPage({
       />
     </svg>
   );
+
+  const randomKey = `${pageInfo.slug}-${Math.random()}`;
   return (
     <>
       <div className="hidden">{star()}</div>
       <div className="container">
-        {currentPage === 1 ? <AdSense slot={ADS_SLOT_ID.CATEGORY} /> : null}
+        {currentPage === 1 ? (
+          <AdSense slot={ADS_SLOT_ID.CATEGORY} key={randomKey} />
+        ) : null}
         {/* <header className="m-4 flex flex-col items-center">
           <h1 className="mb-2 text-2xl font-black text-rose-500 xl:mx-8 xl:mt-8">
             {pageInfo.name} Games
