@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-export default function Navbar({ menuOpen }) {
-  const router = useRouter();
+export default function Navbar({ menuOpen, setMenuState }) {
+  const Router = useRouter();
   // const current = router.query;
   // const pathname = router.pathname;
-  const asPath = router.asPath;
-
+  const asPath = Router.asPath;
+  // const [isMenuOpen, setIsMenuOpen] = useState(menuOpen);
   // console.log(`router`, router);
   // console.log(`current`, current);
   // console.log(`pathname`, pathname);
@@ -66,6 +67,18 @@ export default function Navbar({ menuOpen }) {
       link: `/category/girl/`,
     },
   ];
+
+  useEffect(() => {
+    function handleStart() {
+      setMenuState(false);
+    }
+
+    Router.events.on("routeChangeStart", handleStart);
+    return () => {
+      Router.events.off("routeChangeStart", handleStart);
+    };
+  }, [setMenuState, menuOpen, Router.events]);
+
   return (
     <nav className={`${!menuOpen ? `hidden` : `flex w-full`} navbar`}>
       <ul className="navbar-list">

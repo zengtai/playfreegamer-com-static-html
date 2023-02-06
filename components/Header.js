@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Logo from "@/public/images/PFG_LOGO3.svg";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { SITE_META } from "@/lib/constants";
+// import { useRouter } from "next/router";
 const Navbar = dynamic(() => import("./Navbar"));
 const SearchPanel = dynamic(() => import("./SearchPanel"));
 // import Navbar from "./Navbar";
@@ -20,6 +21,9 @@ export default function Header() {
 
   function updateSearchState(newState) {
     setShowSearch(newState);
+  }
+  function updateMenuState(newState) {
+    setMenuOpen(newState);
   }
 
   return (
@@ -93,7 +97,7 @@ export default function Header() {
               )}
             </button>
           </div>
-          <Navbar menuOpen={menuOpen} />
+          <Navbar menuOpen={menuOpen} setMenuState={updateMenuState} />
         </div>
       </header>
       <Suspense fallback={<div>Loading</div>}>
