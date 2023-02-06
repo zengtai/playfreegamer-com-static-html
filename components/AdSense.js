@@ -40,7 +40,9 @@ export default function AdSense({
         data-full-width-responsive={responsive || "true"}
         data-ad-layout={layout}
         data-ad-layout-key={layoutKey}
-        {...(DEV_MODE ? { "data-adtest": "on" } : {})}
+        {...(DEV_MODE || process.env.NODE_ENV === "development"
+          ? { "data-adtest": "on" }
+          : {})}
       ></ins>
     </div>
   );

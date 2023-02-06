@@ -52,7 +52,7 @@ ZumaMarbles
 
 运行 `npm run dev`
 
-构建 `npm run build`
+构建 `npm run build`，构建正式版本前需确定位于 `lib/constants.js` 的 `DEV_MODE` 值为 `false`，否则 Adsense 广告单元会添加 `data-adtest="on"`
 
 ---
 
