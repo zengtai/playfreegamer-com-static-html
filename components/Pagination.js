@@ -41,7 +41,7 @@ export default function Pagination({
               <span>{pageNumber}</span>
             </li>
           ) : (
-            <li>
+            <li key={i}>
               <Link className="text-rose-500" href={renderPageLink(pageNumber)}>
                 {pageNumber}
               </Link>
