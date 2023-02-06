@@ -115,7 +115,7 @@
   @apply mb-2 text-xl font-black leading-5 text-rose-500 xl:text-5xl;
 }
 
-.detail .category {
+.info .category {
   @apply mb-2 text-xs font-bold uppercase text-red-900 xl:text-base;
 }
 
