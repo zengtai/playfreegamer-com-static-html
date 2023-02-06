@@ -107,6 +107,10 @@
   @apply ml-3 xl:ml-0;
 }
 
+.page-nav li {
+  @apply flex h-10 w-10 items-center justify-center;
+}
+
 .detail h1 {
   @apply mb-2 text-xl font-black leading-5 text-rose-500 xl:text-5xl;
 }

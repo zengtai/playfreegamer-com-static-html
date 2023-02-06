@@ -29,26 +29,22 @@ export default function Pagination({
           `Prev`
         )}
       </button>
-      <ol className="hidden gap-6 text-rose-700 xl:flex xl:items-center">
+      <ol className="page-nav hidden gap-4 text-rose-700 xl:flex xl:items-center xl:text-center">
         {pages.map((pageNumber, i) =>
           pageNumber === dotts ? (
             <li key={i}>{pageNumber}</li>
+          ) : pageNumber === currentPage ? (
+            <li
+              className={`rounded-full bg-rose-300 text-lg text-rose-700`}
+              key={i}
+            >
+              <span>{pageNumber}</span>
+            </li>
           ) : (
-            <li key={i}>
-              {pageNumber === currentPage ? (
-                <span
-                  className={`rounded-full bg-rose-300 p-2 text-lg text-rose-700`}
-                >
-                  {pageNumber}
-                </span>
-              ) : (
-                <Link
-                  className="p-2 text-rose-500"
-                  href={renderPageLink(pageNumber)}
-                >
-                  {pageNumber}
-                </Link>
-              )}
+            <li>
+              <Link className="text-rose-500" href={renderPageLink(pageNumber)}>
+                {pageNumber}
+              </Link>
             </li>
           )
         )}
