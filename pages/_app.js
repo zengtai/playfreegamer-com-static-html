@@ -1,16 +1,17 @@
 import Layout from "@/components/Layout";
+import { GA_ID } from "@/lib/constants";
+import * as gtag from "@/lib/gtag";
 import "@/styles/globals.css";
 import "@/styles/nprogress.css";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import NProgress from "nprogress";
 import { useEffect } from "react";
-import { GA_ID } from "@/lib/constants";
-import * as gtag from "@/lib/gtag";
 
 export default function App({ Component, pageProps }) {
   const Router = useRouter();
-  // console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
+  console.log("🚀 ~ file: _app.js:13 ~ App ~ Router", Router);
+
   useEffect(() => {
     const handleStart = (url) => {
       console.log(`Loading: ${url}`);
@@ -55,12 +56,7 @@ export default function App({ Component, pageProps }) {
           `,
         }}
       />
-      <Script
-        id="ads-init"
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADS_ID}`}
-        crossOrigin="anonymous"
-      />
+
       <Component {...pageProps} />
     </Layout>
   );

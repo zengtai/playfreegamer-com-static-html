@@ -42,6 +42,7 @@ export default function Game({ data }) {
           content={`${i.title}, ${i.appid}, play ${i.title}, play ${i.appid}, ${i.title} game, ${i.appid} game, ${i.title} games, ${i.appid} games`}
         />
       </Head>
+
       <div className="hidden">{star()}</div>
       <div className="detail container">
         {/* <AdSense slot={ADS_SLOT_ID.DETAIL} /> */}
