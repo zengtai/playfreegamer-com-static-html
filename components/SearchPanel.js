@@ -13,7 +13,19 @@ export default function SearchPanel({ isShow, updateState }) {
   const [query, setQuery] = useState("");
 
   const searchData = useCurrentData();
-  console.log(`searchData: `, searchData);
+  console.log(
+    `searchData: `,
+    JSON.stringify(
+      searchData.data
+        .map(
+          (i) =>
+            `/${i.appid.toLowerCase()} /${
+              i.slug
+            }/ 301\n/${i.appid.toLowerCase()}/ /${i.slug}/ 301`
+        )
+        .join(`\n`)
+    )
+  );
 
   function handleClick() {
     updateState(!isOpen);
