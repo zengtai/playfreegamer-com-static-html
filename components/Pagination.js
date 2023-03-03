@@ -21,7 +21,7 @@ export default function Pagination({
         {...(!prevAvailable ? { disabled: true } : null)}
         className={`rounded-full ${
           prevAvailable ? `bg-cyan-400` : `bg-cyan-200`
-        } px-4 py-2 uppercase text-white`}
+        } px-4 py-2 uppercase text-cyan-400`}
       >
         {prevAvailable ? (
           <Link href={renderPageLink(currentPage - 1)}>Prev</Link>
