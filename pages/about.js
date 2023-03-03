@@ -17,7 +17,7 @@ export default function About(params) {
       <div className="page container">
         <PageTitle title={`About`} />
         <div
-          className="m-4 text-sm text-red-900 xl:mx-8"
+          className="m-4 text-sm text-sky-900 xl:mx-8"
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>

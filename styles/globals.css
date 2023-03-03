@@ -14,7 +14,7 @@
 }
 
 .site-header {
-  @apply bg-rose-400 shadow shadow-rose-400/40;
+  @apply bg-cyan-400 shadow shadow-cyan-400/40;
 }
 
 .site-header .container {
@@ -22,7 +22,7 @@
 }
 
 .navbar {
-  @apply absolute left-0 top-16 z-10 flex-col justify-between rounded-b-3xl bg-rose-400 p-2 xl:static xl:flex xl:flex-row xl:rounded-full;
+  @apply absolute left-0 top-16 z-10 flex-col justify-between rounded-b-3xl bg-cyan-400 p-2 xl:static xl:flex xl:flex-row xl:rounded-full;
 }
 
 .navbar-list {
@@ -34,7 +34,7 @@
 }
 
 .main {
-  @apply grow bg-gradient-to-t from-rose-50 to-white;
+  @apply grow bg-gradient-to-t from-cyan-50 to-white;
 }
 
 .list-image {
@@ -44,10 +44,10 @@
   @apply mx-2 mb-2 text-center;
 }
 .list-meta .title {
-  @apply mb-1 text-base font-extrabold leading-5 text-rose-500;
+  @apply mb-1 text-base font-extrabold leading-5 text-cyan-500;
 }
 .list-meta .category {
-  @apply mb-2 text-xs font-bold uppercase text-red-900;
+  @apply mb-2 text-xs font-bold uppercase text-sky-900;
 }
 .list-meta .rating {
   @apply mb-2 -ml-1 flex items-center justify-center;
@@ -59,13 +59,13 @@
   @apply text-sm text-gray-400;
 }
 .play .cta {
-  @apply rounded-full border-2 border-rose-200 bg-rose-100 to-white px-4 py-2 text-sm font-bold text-rose-500 shadow shadow-rose-50;
+  @apply rounded-full border-2 border-cyan-200 bg-cyan-100 to-white px-4 py-2 text-sm font-bold text-cyan-500 shadow shadow-cyan-50;
 }
 .list-title {
   @apply m-4 flex flex-col items-center;
 }
 .list-title h1 {
-  @apply text-2xl font-black text-rose-500 xl:mx-8 xl:mt-8;
+  @apply text-2xl font-black text-cyan-500 xl:mx-8 xl:mt-8;
 }
 .list-title p {
   @apply max-w-3xl text-sm leading-6 text-gray-500;
@@ -92,7 +92,7 @@
 }
 
 .game-list-item {
-  @apply rounded-md border border-rose-100 bg-white p-3 shadow shadow-rose-50 xl:p-4;
+  @apply rounded-md border border-cyan-100 bg-white p-3 shadow shadow-cyan-50 xl:p-4;
 }
 
 .detail .info {
@@ -112,11 +112,11 @@
 }
 
 .detail h1 {
-  @apply mb-2 text-xl font-black leading-5 text-rose-500 xl:text-5xl;
+  @apply mb-2 text-xl font-black leading-5 text-cyan-500 xl:text-5xl;
 }
 
 .info .category {
-  @apply mb-2 text-xs font-bold uppercase text-red-900 xl:text-base;
+  @apply mb-2 text-xs font-bold uppercase text-sky-900 xl:text-base;
 }
 
 .detail .rating {
@@ -136,15 +136,15 @@
 }
 
 .detail .play-btn {
-  @apply w-full max-w-sm rounded-full bg-rose-400 px-4 py-2 text-lg font-black uppercase text-white  shadow-lg shadow-rose-100;
+  @apply w-full max-w-sm rounded-full bg-cyan-400 px-4 py-2 text-lg font-black uppercase text-white  shadow-lg shadow-cyan-100;
 }
 
 .section-title {
-  @apply m-4 border-t-2 border-rose-100 pt-4 text-lg font-bold text-rose-500 xl:mx-8;
+  @apply m-4 border-t-2 border-cyan-100 pt-4 text-lg font-bold text-cyan-500 xl:mx-8;
 }
 
 .site-footer {
-  @apply border-t border-t-rose-200 bg-rose-400 text-center text-sm text-white;
+  @apply border-t border-t-cyan-200 bg-cyan-400 text-center text-sm text-white;
 }
 
 .site-footer nav {
@@ -156,11 +156,11 @@
 }
 
 .site-footer p {
-  @apply m-4 flex justify-center gap-2 pb-4 text-xs text-red-900/80;
+  @apply m-4 flex justify-center gap-2 pb-4 text-xs text-sky-900/80;
 }
 
 .scroll-top-btn {
-  @apply fixed right-3 bottom-3 z-10 h-12 w-12 content-center justify-center rounded-full bg-rose-500/50 text-white;
+  @apply fixed right-3 bottom-3 z-10 h-12 w-12 content-center justify-center rounded-full bg-cyan-500/50 text-white;
 }
 
 .star {
