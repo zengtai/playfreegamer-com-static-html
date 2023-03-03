@@ -92,8 +92,8 @@ export default function Navbar({ menuOpen, setMenuState }) {
                   i.link === `${asPath}/` ||
                   (i.link !== `/` && asPath.match(i.link))
                 )
-                  ? "bg-cyan-300 text-cyan-700"
-                  : "bg-cyan-50 text-cyan-600"
+                  ? "bg-slate-500 text-slate-700"
+                  : "bg-slate-50 text-slate-600"
               }`}
               href={i.link}
             >
