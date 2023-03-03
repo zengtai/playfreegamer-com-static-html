@@ -18,7 +18,7 @@ export default function Pagination({
   return (
     <nav className="mx-2 my-10 flex items-center justify-between gap-8 font-bold xl:mb-12 xl:justify-center">
       <button
-        {...(prevAvailable ? { disabled: true } : null)}
+        {...(!prevAvailable ? { disabled: true } : null)}
         className={`rounded-full ${
           prevAvailable ? `bg-rose-400` : `bg-rose-200`
         } px-4 py-2 uppercase text-white`}

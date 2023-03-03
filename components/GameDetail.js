@@ -2,33 +2,21 @@ import Link from "next/link";
 import Image from "./Image";
 import Stars from "./Stars";
 import AdSense from "./AdSense";
-import { ADS_SLOT_ID, SHOW_AD, ADSENSE_ID } from "@/lib/constants";
+import { ADS_SLOT_ID } from "@/lib/constants";
 import getIconUrl from "@/utils/getIconUrl";
 import getGameUrl from "@/utils/getGameUrl";
 import getFormatedNum from "@/utils/getFormatedNum";
-import Script from "next/script";
+
+import AdScript from "./AdScript";
 
 export default function GameDetail({ item }) {
   const i = item;
   const randomKey = `${i.appid}-${Math.random()}`;
   return (
     <>
-      {SHOW_AD && (
-        <Script
-          id="ads-init"
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-          crossOrigin="anonymous"
-        />
-      )}
+      <AdScript />
       <div className="mx-auto max-w-3xl">
-        {SHOW_AD && (
-          <AdSense
-            className={`mt-4`}
-            slot={ADS_SLOT_ID.DETAIL}
-            key={randomKey}
-          />
-        )}
+        <AdSense className={`mt-4`} slot={ADS_SLOT_ID.DETAIL} key={randomKey} />
         <div className="info">
           <Image
             src={getIconUrl(i?.appid)}

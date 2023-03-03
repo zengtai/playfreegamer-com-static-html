@@ -1,14 +1,15 @@
 import { getDataForHome } from "@/lib/api";
 import Head from "next/head";
 // import GameListItem from "@/components/GameListItem";
-import { ADSENSE_ID, ADS_SLOT_ID, SITE_META, SHOW_AD } from "@/lib/constants";
+import { ADS_SLOT_ID, SITE_META, SHOW_AD } from "@/lib/constants";
 import useCurrentData from "@/hooks/useData";
 import AdSense from "@/components/AdSense";
 
 import ListTitle from "@/components/ListTitle";
 import { basePath } from "@/next.config";
 import GameList from "@/components/GameList";
-import Script from "next/script";
+
+import AdScript from "@/components/AdScript";
 
 export default function Home({ data }) {
   console.log("🚀 ~ file: index.js:12 ~ Home ~ data", data);
@@ -49,17 +50,10 @@ export default function Home({ data }) {
         />
       </Head>
 
-      {SHOW_AD && (
-        <Script
-          id="ads-init"
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_ID}`}
-          crossOrigin="anonymous"
-        />
-      )}
+      <AdScript />
       <div className="hidden">{star()}</div>
       <div className="container">
-        {SHOW_AD && <AdSense key={randomKey} slot={ADS_SLOT_ID.HOME} />}
+        <AdSense key={randomKey} slot={ADS_SLOT_ID.HOME} />
         <ListTitle title={`Hot Games`} />
         <GameList items={games} />
       </div>
