@@ -20,7 +20,7 @@ export default function Pagination({
       <button
         {...(!prevAvailable ? { disabled: true } : null)}
         className={`rounded-full ${
-          prevAvailable ? `bg-rose-400` : `bg-rose-200`
+          prevAvailable ? `bg-cyan-400` : `bg-cyan-200`
         } px-4 py-2 uppercase text-white`}
       >
         {prevAvailable ? (
@@ -29,20 +29,20 @@ export default function Pagination({
           `Prev`
         )}
       </button>
-      <ol className="page-nav hidden gap-4 text-rose-700 xl:flex xl:items-center xl:text-center">
+      <ol className="page-nav hidden gap-4 text-cyan-700 xl:flex xl:items-center xl:text-center">
         {pages.map((pageNumber, i) =>
           pageNumber === dotts ? (
             <li key={i}>{pageNumber}</li>
           ) : pageNumber === currentPage ? (
             <li
-              className={`rounded-full bg-rose-300 text-lg text-rose-700`}
+              className={`rounded-full bg-cyan-300 text-lg text-cyan-600`}
               key={i}
             >
               <span>{pageNumber}</span>
             </li>
           ) : (
             <li key={i}>
-              <Link className="text-rose-500" href={renderPageLink(pageNumber)}>
+              <Link className="text-cyan-500" href={renderPageLink(pageNumber)}>
                 {pageNumber}
               </Link>
             </li>
@@ -52,7 +52,7 @@ export default function Pagination({
       <button
         {...(!nextAvailable ? { disabled: true } : null)}
         className={`rounded-full ${
-          nextAvailable ? `bg-rose-400` : `bg-rose-200`
+          nextAvailable ? `bg-cyan-400` : `bg-cyan-200`
         } px-8 py-2 uppercase text-white`}
       >
         {nextAvailable ? (
