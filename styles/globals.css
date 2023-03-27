@@ -88,7 +88,7 @@
 }
 
 .game-list {
-  @apply m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-8 xl:mb-12 xl:grid-cols-6 xl:gap-4;
+  @apply m-2 grid grid-cols-2 gap-2 md:grid-cols-4 xl:mx-8 xl:mt-4 xl:mb-12 xl:grid-cols-6 xl:gap-4;
 }
 
 .game-list-item {
