@@ -20,8 +20,8 @@ export default function Pagination({
       <button
         {...(!prevAvailable ? { disabled: true } : null)}
         className={`rounded-full ${
-          prevAvailable ? `bg-cyan-400` : `bg-cyan-200`
-        } px-4 py-2 uppercase text-cyan-400`}
+          prevAvailable ? `bg-cyan-400 text-white` : `bg-cyan-200 text-cyan-400`
+        } px-4 py-2 uppercase `}
       >
         {prevAvailable ? (
           <Link href={renderPageLink(currentPage - 1)}>Prev</Link>
