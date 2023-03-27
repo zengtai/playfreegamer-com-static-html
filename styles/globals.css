@@ -136,7 +136,11 @@
 }
 
 .detail .play-btn {
-  @apply w-full max-w-sm rounded-full bg-cyan-400 px-4 py-2 text-lg font-black uppercase text-white  shadow-lg shadow-cyan-100;
+  @apply w-full max-w-sm rounded-full bg-cyan-400 text-lg font-black uppercase text-white  shadow-lg shadow-cyan-100;
+}
+
+.play-btn a {
+  @apply block px-4 py-2;
 }
 
 .section-title {
