@@ -85,14 +85,14 @@ export async function getStaticProps(ctx) {
 }
 
 export async function getStaticPaths() {
-  const categorySlugs = await getAllCategoryWithSlug();
+  const slugs = await getAllCategoryWithSlug().then((res) =>
+    res.map((category) => category.slug)
+  ); // 所有分类的slug
 
-  const slugs = categorySlugs.map((category) => category.slug);
-  // const slug = i.slug;
   let paths = [];
 
   for (const slug of slugs) {
-    const total = await getTotalCount(slug);
+    const total = await getTotalCount(slug); // 当前分类下的游戏总数
     const pageCount = Math.ceil(total / PER_PAGE);
     const tmp = Array.from({ length: pageCount }, (_, index) => ({
       params: { slug, page: `${index + 2}` },
