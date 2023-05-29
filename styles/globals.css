@@ -22,7 +22,7 @@
 }
 
 .navbar {
-  @apply absolute left-0 top-16 z-10 flex-col justify-between rounded-b-3xl bg-cyan-400 p-2 xl:static xl:flex xl:flex-row xl:rounded-full;
+  @apply absolute left-0 top-16 z-10 flex-col justify-between rounded-b-3xl bg-cyan-400 p-2 xl:static xl:flex xl:flex-row xl:rounded-full xl:text-sm;
 }
 
 .navbar-list {

@@ -93,6 +93,7 @@ export async function getStaticPaths() {
 
   for (const slug of slugs) {
     const total = await getTotalCount(slug); // 当前分类下的游戏总数
+    // if (total < 1) return; // 如果没有游戏则不生成路径
     const pageCount = Math.ceil(total / PER_PAGE);
     const tmp = Array.from({ length: pageCount }, (_, index) => ({
       params: { slug, page: `${index + 2}` },

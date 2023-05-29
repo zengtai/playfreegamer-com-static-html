@@ -16,8 +16,8 @@ export default function SearchPanel({ isShow, updateState }) {
   console.log(
     `searchData: `,
     JSON.stringify(
-      searchData.data
-        .map(
+      searchData?.data
+        ?.map(
           (i) =>
             `/${i.appid.toLowerCase()} /${
               i.slug
