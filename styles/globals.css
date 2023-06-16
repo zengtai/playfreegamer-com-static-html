@@ -18,7 +18,7 @@
 }
 
 .site-header .container {
-  @apply relative flex items-center justify-between xl:flex-row;
+  @apply relative flex items-center justify-between xl:max-w-full xl:flex-row;
 }
 
 .navbar {

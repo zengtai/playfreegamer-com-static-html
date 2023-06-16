@@ -66,10 +66,10 @@ export default function Navbar({ menuOpen, setMenuState }) {
       text: `Girl`,
       link: `/category/girl/`,
     },
-    // {
-    //   text: `Action`,
-    //   link: `/category/action/`,
-    // },
+    {
+      text: `Action`,
+      link: `/category/action/`,
+    },
     {
       text: `Merge`,
       link: `/category/merge/`,

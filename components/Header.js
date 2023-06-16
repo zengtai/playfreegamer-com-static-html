@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <>
       <header className="site-header">
-        <div className="container">
+        <div className="relative flex items-center justify-between xl:max-w-full xl:flex-row xl:justify-center">
           <div className="branding m-4">
             <Link href={`/`} title={SITE_META.NAME}>
               <Image
